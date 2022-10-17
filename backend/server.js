@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended: false}))
 //GET REQUEST
 
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 
 // USING ERROR HANDLER
 app.use(errorHandler)
