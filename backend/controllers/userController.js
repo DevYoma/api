@@ -16,6 +16,11 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error("Please add all Fields")
     }
 
+    if(!email.includes("@")){
+        res.status(400);
+        throw new Error("Please enter a Valid Email Address")
+    }
+
     // check if user exists
     const userExists = await User.findOne({ email })
 
